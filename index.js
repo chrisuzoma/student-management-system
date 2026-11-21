@@ -1,10 +1,11 @@
-import express from "express";
-const app = express();
-app.use(express.json());
-const PORT = 3000;
-app.get("/", (req, res) => {
-  res.send("student-management-system");
-});
+import 'dotenv/config';
+
+import app from './src/app.js';
+
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`server live on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
+
+export default app;
